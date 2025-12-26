@@ -2,6 +2,13 @@
 
 This set of bookmarklets allows you to convert any webpage into clean Markdown text with a single click. It is designed to work entirely within the browser (no external servers or libraries), making it compatible with secure sites like banking portals, GitHub, and corporate wikis.
 
+Here's an example
+
+<img width="2296" height="1730" alt="Screenshot 2025-12-26 at 8 55 26 AM" src="https://github.com/user-attachments/assets/5daeff4b-ed05-4982-a9ba-a114acc9fd7f" />
+<img width="3432" height="1708" alt="Screenshot 2025-12-26 at 8 55 38 AM" src="https://github.com/user-attachments/assets/404b1a19-23a7-4eb4-b02b-1f0544ea681f" />
+<img width="3400" height="1658" alt="Screenshot 2025-12-26 at 8 55 58 AM" src="https://github.com/user-attachments/assets/ca52903a-b509-4c09-a43a-2dd9caa2d459" />
+
+
 ## The Tools
 
 ### 1. Instant Copy (Clipboard)
