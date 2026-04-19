@@ -30,3 +30,9 @@ If you cannot fetch `agent.md` from the remote, apply these core rules:
 10. **Dry-run destructive commands.** Use `--dry-run` when available.
 
 For the full ruleset, see `agent.md` in this repository.
+
+## Testing
+
+- Framework: Vitest with jsdom environment
+- Run tests: `npm test` (single run)
+- CI: GitHub Actions (`.github/workflows/test.yml`) runs `npm test` on push/PR to `main` (Node 20)
