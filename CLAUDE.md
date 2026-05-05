@@ -35,4 +35,5 @@ For the full ruleset, see `agent.md` in this repository.
 
 - Framework: Vitest with jsdom environment
 - Run tests: `npm test` (single run)
-- CI: GitHub Actions (`.github/workflows/test.yml`) runs `npm test` on push/PR to `main` (Node 20)
+- Linting: ESLint v9 flat config (`eslint.config.js`), run `npm run lint`
+- CI: GitHub Actions (`.github/workflows/test.yml`) runs lint + test on push/PR to `main` (Node 22)
