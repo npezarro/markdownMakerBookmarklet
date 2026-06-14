@@ -31,16 +31,11 @@ If you cannot fetch `agent.md` from the remote, apply these core rules:
 
 For the full ruleset, see `agent.md` in this repository.
 
-## Testing & CI
-
-- Framework: Vitest with jsdom (`vitest.config.js`). Run tests with `npm test`, lint with `npm run lint`.
-- CI: `.github/workflows/test.yml` runs lint + tests on push/PR to `main` (Node 22).
-- **Keep `package-lock.json` committed** (not in `.gitignore`). GitHub Actions `cache: npm` + `npm ci` require the lockfile; without it CI fails to install.
-- **Avoid single-quoted `**` test globs** in CI (e.g. `'test/**/*.test.js'`). `globstar` is off by default on GitHub Actions, so the literal pattern is passed through and tests get silently skipped. Use a flat glob or let Vitest discover tests via config.
-
 ## Testing
 
 - Framework: Vitest with jsdom environment
 - Run tests: `npm test` (single run)
 - Linting: ESLint v9 flat config (`eslint.config.js`), run `npm run lint`
 - CI: GitHub Actions (`.github/workflows/test.yml`) runs lint + test on push/PR to `main` (Node 22)
+- **Keep `package-lock.json` committed** (not in `.gitignore`). GitHub Actions `cache: npm` + `npm ci` require the lockfile; without it CI fails to install.
+- **Avoid single-quoted `**` test globs** in CI (e.g. `'test/**/*.test.js'`). `globstar` is off by default on GitHub Actions, so the literal pattern is passed through and tests get silently skipped. Use a flat glob or let Vitest discover tests via config.
