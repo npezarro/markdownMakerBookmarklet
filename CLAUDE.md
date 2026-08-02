@@ -39,3 +39,11 @@ For the full ruleset, see `agent.md` in this repository.
 - CI: GitHub Actions (`.github/workflows/test.yml`) runs lint + test on push/PR to `main` (Node 22)
 - **Keep `package-lock.json` committed** (not in `.gitignore`). GitHub Actions `cache: npm` + `npm ci` require the lockfile; without it CI fails to install.
 - **Avoid single-quoted `**` test globs** in CI (e.g. `'test/**/*.test.js'`). `globstar` is off by default on GitHub Actions, so the literal pattern is passed through and tests get silently skipped. Use a flat glob or let Vitest discover tests via config.
+
+### Test Practice
+
+From `agentGuidance/guidance/testing.md` (applies because this repo has a real suite in `core.test.js`):
+
+- **Bug fixes get a regression test.** Write a test that fails without the fix and passes with it (e.g. the DOM shape that `walkNode`, `redactHtml`, or `cleanMarkdown` mishandled), so the *class* of bug can't return. The fix goes in `core.js`; the test goes in the suite.
+- **Don't write speculative tests.** Cover the happy path plus real edge cases — empty/whitespace nodes, null/undefined, and the length boundaries (`MAX_MARKDOWN_LENGTH`, `MAX_HTML_LENGTH`, `MAX_ELEMENTS`) — for functions with actual logic. Skip trivial wrappers and third-party behavior (jsdom, terser).
+- **Mock at boundaries, never the unit under test.** Stub the DOM/environment, not the exported function being exercised; if a test needs to stub the function it is testing, refactor the function instead.
